@@ -35,8 +35,10 @@
 <!--v1.4 viadonau KHA November 2020 -->
 <!--       removed sequence element from <PortOfEmbarkation> and <PortOfDisembarkation> -->
 <!--       removed minOccurs=0 from <LocationType> internal sequence element -->
+<!--       removed <LastPortOfCall> from <TransportLocations> -->
+<!--       removed <FirstPortOfCall> from <TransportLocations>-->
+<!--       Added <PortOfCall> to <TransportLocations>-->
 <!--       Added simple type <CrewEffects> to <Person> -->
-<!--       removed minOccurs=0 from <LocationType> internal sequence element -->
 <!--       updated annotation -->
 <!-- ============================================================================================== -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.risexpertgroups.org/PAXLST1.0" targetNamespace="http://www.risexpertgroups.org/PAXLST1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
