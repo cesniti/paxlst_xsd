@@ -35,13 +35,20 @@
 <!--v1.4 viadonau KHA November 2020 -->
 <!--       removed sequence element from <PortOfEmbarkation> and <PortOfDisembarkation> -->
 <!--       removed minOccurs=0 from <LocationType> internal sequence element -->
+<!--       Added simple type <CrewEffects> to <Person> -->
 <!--       removed minOccurs=0 from <LocationType> internal sequence element -->
+<!--       updated annotation -->
 <!-- ============================================================================================== -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.risexpertgroups.org/PAXLST1.0" targetNamespace="http://www.risexpertgroups.org/PAXLST1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:element name="Person">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="PersonType">
+					<xs:annotation>
+						<xs:documentation>‘FM’ for crew member
+‘FL’ for passenger
+‘BV’ for stowaway persons</xs:documentation>
+					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
 							<xs:maxLength value="20"/>
@@ -53,6 +60,9 @@
 				</xs:element>
 				<xs:sequence>
 					<xs:element name="GivenNames">
+						<xs:annotation>
+							<xs:documentation>Given names</xs:documentation>
+						</xs:annotation>
 						<xs:simpleType>
 							<xs:restriction base="xs:string">
 								<xs:maxLength value="50"/>
@@ -60,6 +70,9 @@
 						</xs:simpleType>
 					</xs:element>
 					<xs:element name="FamilyName">
+						<xs:annotation>
+							<xs:documentation>Family name</xs:documentation>
+						</xs:annotation>
 						<xs:simpleType>
 							<xs:restriction base="xs:string">
 								<xs:maxLength value="50"/>
@@ -67,6 +80,9 @@
 						</xs:simpleType>
 					</xs:element>
 					<xs:element name="NamePrefix" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Prefix (Mr. or Ms.)</xs:documentation>
+						</xs:annotation>
 						<xs:simpleType>
 							<xs:restriction base="xs:string">
 								<xs:maxLength value="20"/>
@@ -82,6 +98,10 @@
 						</xs:simpleType>
 					</xs:element>
 					<xs:element name="PostalCode" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Postal code including 
+country code (A-1200)</xs:documentation>
+						</xs:annotation>
 						<xs:simpleType>
 							<xs:restriction base="xs:string">
 								<xs:minLength value="1"/>
@@ -100,22 +120,21 @@
 						</xs:simpleType>
 					</xs:element>
 				</xs:sequence>
-				<xs:element name="PortOfEmbarkation" type="LocationType" minOccurs="0"/>
-				<xs:element name="EmbarkationDateTime" type="xs:dateTime" minOccurs="0">
+				<xs:element name="PortOfEmbarkation" type="LocationType" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation>Estimated Date and time of embarkation</xs:documentation>
+						<xs:documentation>Port where the person is boarding</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="PortOfDisembarkation" type="LocationType" minOccurs="0"/>
-				<xs:element name="DisembarkationDateTime" type="xs:dateTime" minOccurs="0">
+				<xs:element name="PortOfDisembarkation" type="LocationType" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation>Estimated Date and time of disembarkation</xs:documentation>
+						<xs:documentation>Port where the person is leaving the vessel</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:sequence minOccurs="0">
 					<xs:element name="RankType">
 						<xs:annotation>
-							<xs:documentation>1 = Crewmember, 5 = Professional</xs:documentation>
+							<xs:documentation>1 = Crewmember,
+5 = Professional</xs:documentation>
 						</xs:annotation>
 						<xs:simpleType>
 							<xs:restriction base="xs:string">
@@ -125,6 +144,10 @@
 						</xs:simpleType>
 					</xs:element>
 					<xs:element name="RankName" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Rank/title name
+e.g. Chief officer</xs:documentation>
+						</xs:annotation>
 						<xs:simpleType>
 							<xs:restriction base="xs:string">
 								<xs:maxLength value="256"/>
@@ -164,6 +187,16 @@
 						<xs:documentation>Add remarks for specified person</xs:documentation>
 					</xs:annotation>
 				</xs:element>
+				<xs:element name="CrewEffects" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Effects ineligible for relief from customs duties and taxes or subject to prohibitions or restrictions</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="512"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -171,6 +204,15 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="IdentityDocType">
+					<xs:annotation>
+						<xs:documentation>Document type:
+‘39’ Passport
+‘36’ Identity card
+‘SMB’ Seaman's book
+‘40’ Driving licence (national)
+‘41’ Driving licence (international)
+‘483’ Visa</xs:documentation>
+					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
 							<xs:maxLength value="3"/>
@@ -191,15 +233,26 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
-				<xs:element name="IdentityDocExpireDate" type="xs:date" minOccurs="0"/>
+				<xs:element name="IdentityDocExpireDate" type="xs:date" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Document valid until</xs:documentation>
+					</xs:annotation>
+				</xs:element>
 				<xs:element name="PlaceOfIssue" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>UNECE location code (Rec. 16), see Annex Part II, Chapter 2.3.9</xs:documentation>
+					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
 							<xs:maxLength value="256"/>
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
-				<xs:element name="TypeOfVisa" type="xs:string" minOccurs="0"/>
+				<xs:element name="TypeOfVisa" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Type of visa</xs:documentation>
+					</xs:annotation>
+				</xs:element>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -380,33 +433,44 @@
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="Nationality">
-											<xs:annotation>
-												<xs:documentation>Nationality of means of transport</xs:documentation>
-											</xs:annotation>
-											<xs:simpleType>
-												<xs:restriction base="xs:string">
-													<xs:minLength value="2"/>
-													<xs:maxLength value="3"/>
-												</xs:restriction>
-											</xs:simpleType>
-										</xs:element>
-										<xs:element name="PAXCapacity">
+										<xs:element name="PAXCapacity" minOccurs="0">
 											<xs:complexType>
 												<xs:sequence>
+													<xs:element name="MaximumPassengerCapacity" type="xs:int">
+														<xs:annotation>
+															<xs:documentation>Maximum allowed passenger number</xs:documentation>
+														</xs:annotation>
+													</xs:element>
 													<xs:element name="MaximumPersonsOnBoardCapacity" type="xs:int" minOccurs="0">
 														<xs:annotation>
 															<xs:documentation>Maximum number of allowed persons</xs:documentation>
 														</xs:annotation>
 													</xs:element>
-													<xs:element name="MaximumPassengerCapacity" type="xs:int" minOccurs="0">
-														<xs:annotation>
-															<xs:documentation>Maximum allowed passenger number</xs:documentation>
-														</xs:annotation>
-													</xs:element>
 												</xs:sequence>
 											</xs:complexType>
 										</xs:element>
+										<xs:choice>
+											<xs:element name="Nationality">
+												<xs:annotation>
+													<xs:documentation>ISO two-alpha country code 3166-1, see Part 4, Section 5, No. 12 </xs:documentation>
+												</xs:annotation>
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:length value="2"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+											<xs:element name="IssuingAuthorityENI">
+												<xs:annotation>
+													<xs:documentation>If the nationality of the means of transport is not known the 3 digit code of the competent authority which issued the European Vessel Identification Number should be used.</xs:documentation>
+												</xs:annotation>
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:length value="3"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:element>
+										</xs:choice>
 									</xs:sequence>
 									<xs:attribute name="StageQualifier" type="xs:string" use="required" fixed="20"/>
 								</xs:complexType>
@@ -419,13 +483,26 @@
 												<xs:documentation>Port of departure, the port where the transport starts</xs:documentation>
 											</xs:annotation>
 										</xs:element>
+										<xs:element name="ETD" type="xs:dateTime" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Estimated Time of Departure from port of departure. </xs:documentation>
+											</xs:annotation>
+										</xs:element>
 										<xs:element name="PortOfDestination" type="LocationType">
 											<xs:annotation>
 												<xs:documentation>Passage point that has already been passed by the ship.</xs:documentation>
 											</xs:annotation>
 										</xs:element>
-										<xs:element name="LastPortOfCall" type="LocationType"/>
-										<xs:element name="FirstPortOfCall" type="LocationType" minOccurs="0"/>
+										<xs:element name="ETA" type="xs:dateTime" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Estimated Time of Arrival to port of destination</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="PortOfCall" type="LocationType">
+											<xs:annotation>
+												<xs:documentation>Current issuing port of call</xs:documentation>
+											</xs:annotation>
+										</xs:element>
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
