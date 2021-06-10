@@ -169,11 +169,13 @@ e.g. Chief officer</xs:documentation>
 				</xs:element>
 				<xs:element name="CrewEffects" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation>Effects ineligible for relief from customs duties and taxes or subject to prohibitions or restrictions</xs:documentation>
+						<xs:documentation>Effects ineligible for relief from customs duties and taxes or subject to prohibitions or restrictions
+</xs:documentation>
 					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
 							<xs:maxLength value="512"/>
+							<xs:minLength value="3"/>
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
