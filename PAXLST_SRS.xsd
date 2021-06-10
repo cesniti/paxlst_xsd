@@ -337,6 +337,20 @@ e.g. Chief officer</xs:documentation>
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
+										<xs:element name="VesselsEquipment " minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Vessel's equipment standard
+'S1' = Standard S1
+'S2' = Standard S2</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:length value="2"/>
+													<xs:enumeration value="S1"/>
+													<xs:enumeration value="S2"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
 										<xs:element name="PAXCapacity" minOccurs="0">
 											<xs:complexType>
 												<xs:sequence>
