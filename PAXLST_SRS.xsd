@@ -240,7 +240,7 @@ e.g. Chief officer</xs:documentation>
 	</xs:element>
 	<xs:element name="PAXLST">
 		<xs:annotation>
-			<xs:documentation>ERI PAXLST based on the EDIFACT PAXLST 1.0</xs:documentation>
+			<xs:documentation>ERI PAXLST </xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
@@ -248,80 +248,6 @@ e.g. Chief officer</xs:documentation>
 					<xs:annotation>
 						<xs:documentation>Message Information</xs:documentation>
 					</xs:annotation>
-				</xs:element>
-				<xs:element name="EDIMapping">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="Syntax" default="UNOC">
-								<xs:annotation>
-									<xs:documentation>UNB/S0001/0001</xs:documentation>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="xs:string">
-										<xs:enumeration value="UNOC"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
-							<xs:element name="SyntaxVersion" default="2">
-								<xs:annotation>
-									<xs:documentation>UNB/S001/0002</xs:documentation>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="xs:string">
-										<xs:enumeration value="2"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
-							<xs:element name="MessageType">
-								<xs:annotation>
-									<xs:documentation>UNH/S009/0065</xs:documentation>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="xs:string">
-										<xs:enumeration value="PAXLST"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
-							<xs:element name="MessageVersion">
-								<xs:annotation>
-									<xs:documentation>UNH/S009/0052</xs:documentation>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="xs:string">
-										<xs:enumeration value="D"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
-							<xs:element name="MessageRelease">
-								<xs:annotation>
-									<xs:documentation>UNH/S009/0054</xs:documentation>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="xs:string">
-										<xs:enumeration value="05A"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
-							<xs:element name="MessageControllingAgency">
-								<xs:annotation>
-									<xs:documentation>UNH/S009/0051</xs:documentation>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="xs:string">
-										<xs:enumeration value="UN"/>
-									</xs:restriction>
-								</xs:simpleType>
-							</xs:element>
-							<xs:element name="AssociationAssignedCode">
-								<xs:annotation>
-									<xs:documentation>UNH/S009/0057</xs:documentation>
-								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="xs:string"/>
-								</xs:simpleType>
-							</xs:element>
-						</xs:sequence>
-					</xs:complexType>
 				</xs:element>
 				<xs:element name="PrivacyStatement" minOccurs="0">
 					<xs:annotation>
