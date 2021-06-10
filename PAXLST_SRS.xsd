@@ -340,12 +340,12 @@ e.g. Chief officer</xs:documentation>
 										<xs:element name="PAXCapacity" minOccurs="0">
 											<xs:complexType>
 												<xs:sequence>
-													<xs:element name="MaximumPassengerCapacity" type="xs:int">
+													<xs:element name="PassengerCapacity" type="xs:int">
 														<xs:annotation>
 															<xs:documentation>Maximum allowed passenger number</xs:documentation>
 														</xs:annotation>
 													</xs:element>
-													<xs:element name="MaximumPersonsOnBoardCapacity" type="xs:int" minOccurs="0">
+													<xs:element name="PersonsOnBoardCapacity" type="xs:int" minOccurs="0">
 														<xs:annotation>
 															<xs:documentation>Maximum number of allowed persons</xs:documentation>
 														</xs:annotation>
