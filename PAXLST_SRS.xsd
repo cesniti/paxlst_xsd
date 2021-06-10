@@ -528,9 +528,9 @@ e.g. Chief officer</xs:documentation>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="CommonDenominator" minOccurs="0">
+			<xs:element name="CommonDenominator">
 				<xs:annotation>
-					<xs:documentation>UNH/S009/0068          RefNo to group several msgs of same journey</xs:documentation>
+					<xs:documentation>RefNo to group several msgs of same journey corresponds to common access reference </xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
