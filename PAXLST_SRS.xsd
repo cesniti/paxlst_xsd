@@ -1,45 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Mit XMLSpy v2008 rel. 2 sp2 (http://www.altova.com) von Jürgen Trögl (via donau - Österreichische Wasserstraßen-Gesellschaft mbH) bearbeitet -->
-<!-- edited with XMLSpy v2013 rel. 2 (http://www.altova.com) by ITS/Connekt -->
-<!-- ============================================================================================== -->
-<!-- edited with XMLSpy v2011 rel. 3 sp1 (http://www.altova.com) by peter (peter) -->
-<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by J. van Gils (Ministerie van Verkeer en Waterstaat) -->
-<!-- PAXLST. -->
-<!-- -->
-<!-- Journaal, Releasenotes: -->
-<!-- -->
-<!-- v0.0 PFO  	2011: Initial version   -->
-<!-- v0.1 ERI -->
-<!-- v0.2 PKG, KT, MvD May  2013: -->
-<!-- 			Changed namespace -->
-<!--           Added "05A" as Syntax -->
-<!--           Made ETA/ETD a choice within TransportLocations -->
-<!--           Added <Cityname> to Person-->
-<!--           Changed <Rank> into <Ranktype> with ennumeration (1, 5).-->
-<!--           Added sequence with elements <RankType> & <RankName> to Person-->
-<!--			Added <CountryOfBirth> to person -->
-<!--			Created <Documents> & <IdentityDocument> with max 3 occurences -->
-<!--           Made <IdentityDocExpireDate> optional (minOccurs = 0) -->
-<!--           Added CrewRemarksType -->
-<!--			Added enummerations to <IdentityDocType> matching future EDIfact spec. -->
-<!--v0.3 MvD, KT, PFO June 2013:
-				Removed choice for <ETD> & <ETA>
-				Added enummeration to <PersonType> -->
-<!--v0.3.1 MvD, Sept 2013:
-				Deleted enummeration from <AssociationAssignedCode> because it was not in line with EDIFact spec.-->
-<!--v0.3.2 MvD, KT Sept 2013-->
-<!-- 			Made  <ETD> & <ETA> optional again (correction) -->
-<!--v0.3.3 viadonau KHA, CPL October 2019 -->
-<!--       Added simple type <MaximumPassengerCapacity> to <PAXCapacity> in <TransportDetails>-->
-<!--       Added simple type <MaximumPersonsonBoardCapacity> to <PAXCapacity> in <TransportDetails>-->
-<!--v1.4 viadonau KHA November 2020 -->
-<!--       removed sequence element from <PortOfEmbarkation> and <PortOfDisembarkation> -->
-<!--       removed minOccurs=0 from <LocationType> internal sequence element -->
-<!--       removed <LastPortOfCall> from <TransportLocations> -->
-<!--       removed <FirstPortOfCall> from <TransportLocations>-->
-<!--       Added <PortOfCall> to <TransportLocations>-->
-<!--       Added simple type <CrewEffects> to <Person> -->
-<!--       updated annotation -->
+
 <!-- ============================================================================================== -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.risexpertgroups.org/PAXLST1.0" targetNamespace="http://www.risexpertgroups.org/PAXLST1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:element name="Person">
