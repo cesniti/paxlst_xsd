@@ -251,14 +251,10 @@ e.g. Chief officer</xs:documentation>
 				</xs:element>
 				<xs:element name="PrivacyStatement" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation>Not available in current EU 164 EDIfact definitions</xs:documentation>
+						<xs:documentation>Indicate if this message may be forwarded to other authorities</xs:documentation>
 					</xs:annotation>
 					<xs:simpleType>
-						<xs:restriction base="xs:string">
-							<xs:length value="1"/>
-							<xs:enumeration value="Y"/>
-							<xs:enumeration value="N"/>
-						</xs:restriction>
+						<xs:restriction base="xs:boolean"/>
 					</xs:simpleType>
 				</xs:element>
 				<xs:element name="MessageRef" minOccurs="0">
