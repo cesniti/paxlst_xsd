@@ -390,7 +390,6 @@ e.g. Chief officer</xs:documentation>
 											</xs:element>
 										</xs:choice>
 									</xs:sequence>
-									<xs:attribute name="StageQualifier" type="xs:string" use="required" fixed="20"/>
 								</xs:complexType>
 							</xs:element>
 							<xs:element name="TransportLocations">
@@ -592,7 +591,7 @@ e.g. Chief officer</xs:documentation>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="TerminalCode" minOccurs="0">
+			<xs:element name="ObjectCode" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Terminal code</xs:documentation>
 				</xs:annotation>
