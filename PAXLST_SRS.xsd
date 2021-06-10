@@ -259,7 +259,7 @@ e.g. Chief officer</xs:documentation>
 				</xs:element>
 				<xs:element name="MessageRef" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation>RFF/1154 (1153 = ACW)Reference to previous message</xs:documentation>
+						<xs:documentation>Reference number to previous message</xs:documentation>
 					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
@@ -269,7 +269,7 @@ e.g. Chief officer</xs:documentation>
 				</xs:element>
 				<xs:element name="TestScenarioRef" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation>RFF/1154 (1153 = ADD)Reference to testscenario (not available in current EU 164 Edifact definitions)</xs:documentation>
+						<xs:documentation>Reference to a test scenario</xs:documentation>
 					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
@@ -289,6 +289,9 @@ e.g. Chief officer</xs:documentation>
 					</xs:complexType>
 				</xs:element>
 				<xs:element name="Transport">
+					<xs:annotation>
+						<xs:documentation>DETAILS OF TRANSPORT</xs:documentation>
+					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="TransportDetails">
@@ -370,7 +373,7 @@ e.g. Chief officer</xs:documentation>
 										<xs:choice>
 											<xs:element name="Nationality">
 												<xs:annotation>
-													<xs:documentation>ISO two-alpha country code 3166-1, see Part 4, Section 5, No. 12 </xs:documentation>
+													<xs:documentation>Nationality of means of transport</xs:documentation>
 												</xs:annotation>
 												<xs:simpleType>
 													<xs:restriction base="xs:string">
@@ -445,7 +448,7 @@ e.g. Chief officer</xs:documentation>
 		<xs:sequence>
 			<xs:element name="SenderId">
 				<xs:annotation>
-					<xs:documentation>UNB/S002/0004</xs:documentation>
+					<xs:documentation>Sender identification</xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
@@ -455,7 +458,7 @@ e.g. Chief officer</xs:documentation>
 			</xs:element>
 			<xs:element name="ReceiverId">
 				<xs:annotation>
-					<xs:documentation>UNB/S003/010</xs:documentation>
+					<xs:documentation>Recipient identification</xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
@@ -465,12 +468,12 @@ e.g. Chief officer</xs:documentation>
 			</xs:element>
 			<xs:element name="GenerationDateTime" type="xs:dateTime">
 				<xs:annotation>
-					<xs:documentation>UNB/S004/0017and0018</xs:documentation>
+					<xs:documentation>Generation Date-Time of the message</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="AckRequest" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>BGM/4343</xs:documentation>
+					<xs:documentation>Acknowledgement request</xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
@@ -481,7 +484,7 @@ e.g. Chief officer</xs:documentation>
 			</xs:element>
 			<xs:element name="TestIndicator" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>UNB/0035</xs:documentation>
+					<xs:documentation>'1' = The interchange relates to a test message</xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
@@ -492,8 +495,7 @@ e.g. Chief officer</xs:documentation>
 			</xs:element>
 			<xs:element name="MessageType">
 				<xs:annotation>
-					<xs:documentation>BGM/C002/1001
-"250" CREW LIST
+					<xs:documentation>"250" CREW LIST
 "745" PASSENGER LIST
 "10" STOWAWAY LIST</xs:documentation>
 				</xs:annotation>
@@ -508,7 +510,7 @@ e.g. Chief officer</xs:documentation>
 			</xs:element>
 			<xs:element name="MessageNo">
 				<xs:annotation>
-					<xs:documentation>UNB/0020</xs:documentation>
+					<xs:documentation>Message reference number. This number shall be as unique as possible, both for sender and for receiver.</xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
@@ -518,7 +520,7 @@ e.g. Chief officer</xs:documentation>
 			</xs:element>
 			<xs:element name="MessageFunction">
 				<xs:annotation>
-					<xs:documentation>BGM/1225 ‘1’ = cancellation message   9 = new message 5 = modification </xs:documentation>
+					<xs:documentation>Function of message: '1' = cancellation message, '9' = new message, (original), '5' = modification message, '22' = Final transmission (End of voyage), '150' = Interruption of voyage, '151' = Restart of voyage</xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:integer">
