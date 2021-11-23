@@ -1,6 +1,8 @@
-
 <!-- ============================================================================================== -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.risexpertgroups.org/PAXLST1.0" targetNamespace="http://www.risexpertgroups.org/PAXLST1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   xmlns="https://ris.cesni.eu/_assets/ERI-PAXLST/1.4" targetNamespace="https://ris.cesni.eu/_assets/ERI-PAXLST/1.4"
+		   elementFormDefault="qualified" attributeFormDefault="unqualified"
+		   version="1.4">
 	<xs:element name="Person">
 		<xs:complexType>
 			<xs:sequence>
@@ -101,6 +103,7 @@ country code (A-1200)</xs:documentation>
 							<xs:restriction base="xs:string">
 								<xs:enumeration value="1"/>
 								<xs:enumeration value="5"/>
+								<xs:enumeration value=""/>
 							</xs:restriction>
 						</xs:simpleType>
 					</xs:element>
@@ -124,13 +127,21 @@ e.g. Chief officer</xs:documentation>
 5 = Deckhand,
 6 = Apprentice,
 7 = Engineer,
-8 = Engine minder </xs:documentation>
+8 = Engine minder,  
+9 = Other </xs:documentation>
 						</xs:annotation>
 						<xs:simpleType>
 							<xs:restriction base="xs:string">
 								<xs:length value="1"/>
 								<xs:enumeration value="1"/>
+								<xs:enumeration value="2"/>
+								<xs:enumeration value="3"/>
+								<xs:enumeration value="4"/>
 								<xs:enumeration value="5"/>
+								<xs:enumeration value="6"/>
+								<xs:enumeration value="7"/>
+								<xs:enumeration value="8"/>
+								<xs:enumeration value="9"/>
 							</xs:restriction>
 						</xs:simpleType>
 					</xs:element>
